@@ -49,7 +49,8 @@ L.geoJSON(data, {
   style: myStyle,
   onEachFeature: function(feature, layer) {
     console.log(layer);
-    layer.bindPopup(`<h3> Neighborhood: ${feature.properties.Area_Name} + (${feature.properties.Area_S_CD})</h3>`);
+    layer.bindPopup(`<h3> Neighborhood: ${feature.properties.AREA_NAME}</h3>`);
   },
   }).addTo(map);
 });
+
