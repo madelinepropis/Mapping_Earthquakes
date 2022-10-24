@@ -37,14 +37,8 @@ let airportData = "https://raw.githubusercontent.com/madelinepropis/Mapping_Eart
 
 
 // Grabbing our GeoJSON data.
-d3.json(airportData).then((data) => {
+d3.json(torontoData).then(function(data) {
   console.log(data);
-  // Creating a GeoJSON layer with the retrieved data.
-  L.geoJson(data, {
-    onEachFeature(feature, layer) {
-      console.log(layer);
-      layer.bindPopup(`<h3> Airport code: ${feature.properties.faa}</h3> <hr><h3> Airport name: ${
-        feature.properties.name}</h3>`);
-    },
-  }).addTo(map);
+// Creating a GeoJSON layer with the retrieved data.
+L.geoJSON(data).addTo(map);
 });
